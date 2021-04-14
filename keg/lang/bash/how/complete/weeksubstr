@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ -n "$COMP_LINE" ]]; then
+  days=(monday.md tuesday.md wednesday.md thursday.md
+        friday.md saturday.md saturday.txt sunday.md)
+  shift
+  for day in ${days[@]};do 
+    if [[ "${day:0:${#1}}" == "$1" ]]; then
+      echo "$day"
+    fi
+  done
+  exit 0
+fi
+
+declare day="$1"
+
+## TODO make it only accecpt valid days
+[[ -z "$day" ]] && usageln 'week <day>' && exit 1
+echo "You wanted ${day}."
+
+

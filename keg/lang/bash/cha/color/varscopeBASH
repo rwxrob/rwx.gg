@@ -1,0 +1,15 @@
+#!/bin/bash
+
+r=255:0:0
+g=0:255:0
+
+foo () {
+  r=red # CLOBBERED GLOBAL
+  declare g=green
+  # declare -i g=green # would fail with bad type
+}
+
+foo
+
+echo "r:$r"
+echo "g:$g"

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>CommonMark</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=CommonMark">CommonMark</a></h1>
+  <h2 id=subtitle>A Valiant Attempt to Standardize Markdown</h2>
+  <p><a href="https://commonmark.org"><em>CommonMark</em></a> is the result of a collaboration lead by <a href="https://johnmacfarlane.net">JGM</a> (the creator of <a href="/tools/pandoc/">Pandoc</a>) to create some sort of agreement between all the different companies and organizations using <a href="/lang/md/">Markdown</a> and splintering into dozens of different flavors all interpreting the non-standardized <a href="https://daringfireball.net/projects/markdown/">original</a> in their own way. The effort was a success overall, but left out several design decisions including tables. That’s right, <a href="https://talk.md/common.org/t/tables-in-pure-markdown/81"><em>CommonMark does not allow the use of any tables.</em></a> Tables were one of the main additions from <a href="/lang/md/github/">GitHub</a> that people wanted (despite the pathetic design of GFM tables that often requires a tool of its own just to make them). Given how bad GFM tables are, it is no surprise that JGM politely left them out and quietly implemented a far superior — and simpler — design in <a href="/lang/md/pandoc/">Pandoc Markdown</a>, which is one reason why the resulting Pandoc Markdown is by far the simplest, cleanest, and most widely applicable Markdown version today. It has clearly demonstrated its design supremacy with its adoption into the R language and more (even if GitHub and the rest never catch up).</p>
+  <h2 id="see-also">See Also</h2>
+  <ul>
+  <li><a href="https://commonmark.org/">CommonMark Specification</a></li>
+  <li><a href="https://talk.md/common.org/t/tables-in-pure-markdown/81">CommonMark Tables Discussion</a></li>
+  </ul>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>The Linux Command Line, 5th Edition</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=The Linux Command Line, 5th Edition">The Linux Command Line, 5th Edition</a></h1>
+  <h2 id=subtitle>Best Book for Linux Beginners</h2>
+  <p><a href="./tlcl.pdf"><em>The Linux Command Line</em></a> is the work of William Shotts and a number of other contributors from <a href="http://linuxcommand.org" class="uri">http://linuxcommand.org</a>. Shotts’ pleasant writing style and long experience provide the best possible book for any Linux command line beginner. In fact, it is currently the <em>only</em> Linux book available that covers Bash 4+ including such things as associative arrays. This puts TLCL well beyond established books such as <em>Learning Bash</em> (O’Reilly) which has grown far too out of date to be of any value.</p>
+  <p>TLCL does, however, contain several glaring flaws that can be summarized best by the fact that it covers <code>nroff</code>. This set of annotations is therefore intended to make up for these flaws without dismissing the book entirely, which unfortunately cannot be fixed because of another <em>major</em> flaw: it’s license, which prevents fixes due to its “no derivative works” clause defeating the main reason for creating open content in the first place.</p>
+  <div class="co-fyi">
+  <p>Eventually TLCL will be replaced with this <a href="/what/knowledge/apps/">knowledge app</a> from the RWX community that will eventually cover everything in TLCL without qualifying as a “derivative work” and allow full forks without penalty. The annotations below are <em>not</em> a derivative work and are no different than anyone else’s public notes taken and shared while reading the book.</p>
+  </div>
+  <h2 id="introduction">Introduction</h2>
+  <p>Make sure to read all of the Introduction. It provides an excellent answer to <em>why</em> you should learn the command line.</p>
+  <h2 id="chapter-24">Chapter 24: Writing Your First Script</h2>
+  <p>Finally we get to write some shell code.</p>
+  <div class="co-warn">
+  <p>Don’t confuse the term <a href="https://duck.com/lite?kae=t&amp;q=shell%20code%20from%20pentesting">shell code from pentesting</a> with <em>shell script</em>.</p>
+  </div>
+  <h3 id="bash-is-usually-the-default-command-line">Bash is <em>Usually</em> the Default Command Line</h3>
+  <p>Bash has been the default shell for Linux for several decades but was replaced as the <em>system startup</em> scripting language by Dash on most Linux distributions some time ago. But Bash remains the default interactive shell assigned to new users.</p>
+  <h4 id="what-about-zsh">What about Zsh?</h4>
+  <p>Don’t use it.</p>
+  <h4 id="what-about-dash">What about Dash?</h4>
+  <p><code>/bin/sh</code> is <a href="https://duck.com/lite?kae=t&amp;q=symbolically%20linked">symbolically linked</a> <code>/bin/dash</code>, a light-weight, <a href="https://duck.com/lite?q=POSIX-compliant">POSIX-compliant</a> shell that runs much more quickly for use in the Linux startup process.</p>
+  <p>Despite the claim on Dash’s home page that it is <em>the</em> Linux shell. The <a href="/tools/linux/distros/#arch">Arch distro</a> symlinks to <code>/bin/bash</code> instead.</p>
+  <h3 id="bash-history">Bash History</h3>
+  <p>Bash code is unlike most other coding languages because it evolved from Bourne Shell which was released in 1979.</p>
+  <p>Bourne <em>Again</em> Shell has added stuff from lots of shells since that time including primarily Korn Shell, which came out in 1983. The first version of Bash was released in 1989. And the latest significant Bash release (version 5.0) came out on <a href="https://lwn.net/Articles/776223/">January, 2019</a>. More significantly, however, was the release of Bash 4.0, which came out in February, 2009 and included <a href="https://duck.com/lite?kae=t&amp;q=Bash%20associative%20arrays">Bash associative arrays</a>, which are covered by the 5th edition of this book.</p>
+  <div class="co-warning">
+  <p>This book is the <em>only</em> book available anywhere that covers Bash 4+ associative arrays, which is why it was picked even over Learning Bash from O’Reilly.</p>
+  </div>
+  <h3 id="bash-is-interpreted">Bash is Interpreted</h3>
+  <p>This chapter jumps right into how to use Bash but it is worth understanding that Bash is an <a href="/lang/">interpreted language</a> and that the <a href="https://duck.com/lite?kae=t&amp;q=shebang">shebang</a> line tells the <a href="https://duck.com/lite?q=operating%20system">operating system</a> to send the script file to the <code>/bin/bash</code> binary command which interprets it into <a href="https://duck.com/lite?q=system%20calls">system calls</a> that <code>bash</code> itself executes. There is no intermediary <a href="https://duck.com/lite?q=bytecode">bytecode</a> created.</p>
+  <h3 id="path-environment-variable"><code>PATH</code> Environment Variable</h3>
+  <p>These days <code>~/.local/bin</code> is the preferred place to hide your local <code>bin</code> directory — usually by symlinking to a directory in your personal <a href="https://duck.com/lite?kae=t&amp;q=dotfiles%20config">dotfiles config</a>.</p>
+  <p>You might consider adding the following script to your <code>~/.local/bin/</code> directory or adding the echo line as an alias in <code>~/.bashrc</code> file in order to simplify reading your PATH.</p>
+  <p>Script Version</p>
+  <pre class="bash"><code>#!/bin/bash
+  echo -e ${PATH//:/\\n}</code></pre>
+  <p>Bash Alias</p>
+  <pre class="bash"><code>alias path=&quot;echo -e ${PATH//:/\\n}&quot;</code></pre>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+/*
+function double(x) {
+  return 2 * x;
+}
+*/
+
+// function double(x) { return 2 * x }
+// const double = function (x) { return 2 * x }
+// const double = (x) => { return 2 * x }
+// const double = x => { return 2 * x }
+
+//let double = x => 2 * x 
+//console.log(double(4))
+
+//var n = 100
+//console.log(`Before ${n}`) // ??
+
+// ...
+
+
+function some() {
+  let n = 300
+  if (true) {
+    let n = 200
+    console.log(n)
+  }
+  n = 500
+  console.log(n)
+}
+
+some()
+//console.log(`After ${n}`) // ??

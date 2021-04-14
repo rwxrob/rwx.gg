@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Setup Nginx Web Server</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title>Setup Nginx Web Server</h1>
+  <p>Here’s how to setup an Nginx web server on the Digital Ocean service.</p>
+  <p>Login as a user with root sudo privileges.</p>
+  <h2 id="install-the-nginx-server-software">Install the <code>nginx</code> Server Software</h2>
+  <pre class="sh"><code>sudo apt install nginx</code></pre>
+  <pre class="out"><code>rwxrob@skilstak:~$ sudo apt install nginx
+  [sudo] password for rwxrob:
+  Reading package lists... Done
+  Building dependency tree
+  Reading state information... Done
+  The following additional packages will be installed:
+    fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libnginx-mod-http-image-filter
+    libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream libtiff5 libwebp6 libxpm4 nginx-common nginx-core
+  Suggested packages:
+    libgd-tools fcgiwrap nginx-doc ssl-cert
+  The following NEW packages will be installed:
+    fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libnginx-mod-http-image-filter
+    libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream libtiff5 libwebp6 libxpm4 nginx nginx-common nginx-core
+  0 upgraded, 17 newly installed, 0 to remove and 0 not upgraded.
+  Need to get 2431 kB of archives.
+  After this operation, 7891 kB of additional disk space will be used.
+  Do you want to continue? [Y/n] y</code></pre>
+  <h2 id="confirm-server-installed-and-running">Confirm Server Installed and Running</h2>
+  <pre class="sh"><code>curl localhost</code></pre>
+  <pre class="out"><code>&lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;Welcome to nginx!&lt;/title&gt;
+  &lt;style&gt;
+      body {
+          width: 35em;
+          margin: 0 auto;
+          font-family: Tahoma, Verdana, Arial, sans-serif;
+      }
+  &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+  &lt;p&gt;If you see this page, the nginx web server is successfully installed and
+  working. Further configuration is required.&lt;/p&gt;
+
+  &lt;p&gt;For online documentation and support please refer to
+  &lt;a href=&quot;http://nginx.org/&quot;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+  Commercial support is available at
+  &lt;a href=&quot;http://nginx.com/&quot;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+  <h2 id="create-initial-content">Create Initial Content</h2>
+  <p>You probably want to change the default Nginx content to point to something that does not require root access. The safest way to do this is to create a Git repo and clone it in read-only mode on your new server. Then you make changes to your site from anywhere (including GitHub or GitLab using their editors) and update your server by logging in and doing a <code>git pull</code> to pull down your updates.</p>
+  <p>Let’s go ahead and create a temporary directory that will eventually contain our Git content. We will assume that the name of the repo will be <code>www</code> and that the <code>html</code> directory inside of it will contain the top-level content of our web site.</p>
+  <pre class="sh"><code>mkdir -p www/html</code></pre>
+  <p>Now we need to create a filler HTML page there.</p>
+  <pre class="sh"><code>cd www/html
+  touch index.html
+  vi index.html</code></pre>
+  <p>Here’s something simple.</p>
+  <pre class="html"><code>&lt;!doctype html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Coming Soon&lt;/title&gt;
+    &lt;style&gt;
+      body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Coming Soon&lt;/h1&gt;
+    &lt;p&gt;Here is the future home of blah-blah-blah.&lt;/p&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;</code></pre>
+  <h2 id="change-content-directory-in-nginx-configuration">Change Content Directory in Nginx Configuration</h2>
+  <p>Now we need to update our Nginx configuration to point to our new temporary web page.</p>
+  <p>You’ll need <code>sudo</code> access for this. Don’t proceed until you have it.</p>
+  <p>Also don’t proceed until you have setup an additional user. In other words, don’t do this as root.</p>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

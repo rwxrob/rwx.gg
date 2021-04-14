@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Create Secure Shell Keys</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=Create Secure Shell Keys">Create Secure Shell Keys</a></h1>
+  <h2 id=subtitle>Using <a href="https://duck.com/lite?kae=t&amp;q=%60ssh-keygen%60"><code>ssh-keygen</code></a></h2>
+  <p>Creating a public-private secure shell key pair is required for many applications and services such as authenticating to GitLab. SSH has many different key types which are all based on different mathematical algorithms that vary in security and complexity. These days the Elliptical Curve is most frequently recommended. It’s fast, small, and “quantum resistant” meaning it is expected to be harder to eventually crack when quantum computers become common. Here are the steps to creating your first key pair from the command line.</p>
+  <div class="co-stop">
+  <p>It’s possible you might have already set up your SSH keys. You can check quickly by doing a <a href="/tools/git/ping/">Git Ping</a>.</p>
+  </div>
+  <p>Open a Bash shell terminal to get a command line.</p>
+  <div class="co-fyi">
+  <p>If at any time during the following something goes wrong and you want to cancel try hold <code>Control</code> and type <code>c</code> (which sends an <em>interrupt</em> signal) or hold <code>Control</code> and press <code>d</code> key (which sends an <em>end-of-file</em> character).</p>
+  </div>
+  <p>Enter the following:</p>
+  <pre class="sh"><code>ssh-keygen -t ed25519</code></pre>
+  <p>You should see something like the following:</p>
+  <pre class="out"><code>Generating public/private ed25519 key pair.
+  Enter file in which to save the key (/home/you/.ssh/id_ed25519/):</code></pre>
+  <p>Press the <code>Return/Enter</code> key at each prompt to accept the defaults for everything, which should like this:</p>
+  <pre class="out"><code>Enter passphrase (empty for no passphrase):
+  Enter same passphrase again:
+  Your identification has been saved in /home/you/.ssh/id_ed25519.
+  Your public key has been saved in /home/you/.ssh/id_ed25519.pub.
+  The key fingerprint is:
+  SHA256:zel859ZHCUi6Bp83Ao1iHvWUZAK9Qs68ocGOLNjNtjM you[@host](https://twitch.tv/host)
+  The key&#39;s randomart image is:
+  +--[ED25519 256]--+
+  |     .o..o.      |
+  |     . ooo .     |
+  |  . = . * o .    |
+  |   o X = * o .   |
+  |o.oo= * S *   . .|
+  |oo.o+o   O o   ..|
+  |.  . .  . = o .o |
+  |    E      . o. o|
+  |     o       .. .|
+  +----[SHA256]-----+</code></pre>
+  <p>Congrats! You now have a public/private key pair. You can view your <strong>public</strong> key using the <code>cat</code> command after changing into your home directory with <code>cd</code>.</p>
+  <pre class="sh"><code>cd
+  cat .ssh/id_ed25519.pub</code></pre>
+  <p>Or, if you are fancy and have <code>xclip</code> available you can use that instead to copy it to the clipboard.</p>
+  <pre class="sh"><code>xclip &lt; ~/.ssh/id_ed25519.pub</code></pre>
+  <div class="co-warning">
+  <p>Be <em>really</em> careful not to display your <strong><em>private</em></strong> key to <em>anyone</em>. No one needs to see it but you.</p>
+  </div>
+  <p>Here’s an example of a public key:</p>
+  <pre class="out"><code>ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOxsQnKQcnJ3zymnCdfdGvYZX898LVkDhz9gvMY5FRFj you@host</code></pre>
+  <p>You can now share this public key with services like <a href="/services/gitlab/pubkey/">GitLab</a> or other servers like <a href="https://duck.com/lite?kae=t&amp;q=PicoCTF">PicoCTF</a>. Don’t forget to copy <em>all</em> of it including the <code>ssh-ed25519</code> at the start and the <code>you@host</code> stuff at the end.</p>
+  <div class="co-btw">
+  <p>You don’t need to worry that <em>this</em> private key doesn’t have a passphrase. It is a convenience for authenticating to services that are not highly critical. When using public-private key authentication for servers that have higher security you would want a rather strong passphrase since it is your last line of security if someone gets your private key. But if you are that concerned about the security of your private key you should probably look at <a href="https://duck.com/lite?kae=t&amp;q=KeePassXC">KeePassXC</a> for storing it instead of ever writing it to disk.</p>
+  </div>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

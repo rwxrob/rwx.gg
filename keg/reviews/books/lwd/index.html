@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Learning Web Design, 5th Edition</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=Learning Web Design, 5th Edition">Learning Web Design, 5th Edition</a></h1>
+  <h2 id=subtitle>Annotations</h2>
+  <p><em>Learning Web Design</em> has been the standard textbook for learning HTML, CSS, and web images for over 20 years. It has been kept up to date remarkably well but does suffer a bit from age. For example, there is no mention of modern web publishing methods such as <a href="/what/ssg/">static site generators</a>, <a href="/what/web/jamstack/">JAMStack</a>, <a href="/what/cloud/faas/">lambdas</a>, nor <a href="/what/serverless/">serverless</a> deployments through services like <a href="/services/netlify/">Netlify</a> and <a href="/services/gitlab/">GitLab</a>. The book is heavy on CSS coverage and extremely light on JavaScript (recommending instead to read the O’Reilly <a href="/reviews/books/eloqjs/">Learning JavaScript</a> book instead). But, the book’s coverage of web images is not to be ignored from a security perspective as well as design.</p>
+  <h2 id="before-you-begin">Before You Begin</h2>
+  <p>You should create a Git repo directory to contain your notes and work. You can combine your <a href="/lang/md/">Markdown</a> notes with subdirectories containing the different projects from the book as you work through them.</p>
+  <p>The book is divided into five parts:</p>
+  <table>
+  <caption>Parts of Learning Web Design Book</caption>
+  <colgroup>
+  <col style="width: 7%" />
+  <col style="width: 27%" />
+  <col style="width: 17%" />
+  <col style="width: 46%" />
+  </colgroup>
+  <thead>
+  <tr class="header">
+  <th style="text-align: center;">Part</th>
+  <th style="text-align: center;">Title</th>
+  <th style="text-align: center;">Importance</th>
+  <th style="text-align: left;">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;">I</td>
+  <td style="text-align: center;">Getting Started</td>
+  <td style="text-align: center;">Meh</td>
+  <td style="text-align: left;">These do give a good overview of how the web works, but we cover that also during the <a href="/what/net/">Networking and the Internet</a> week. You might also find that these annotations are more useful in preparing to do the code in the book since they better match your Linux-specific preparations from ealier weeks.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;">II</td>
+  <td style="text-align: center;">HTML for Structure</td>
+  <td style="text-align: center;">Essential</td>
+  <td style="text-align: left;">Core covererage of HTML.</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;">III</td>
+  <td style="text-align: center;">CSS for Presentation</td>
+  <td style="text-align: center;">Essential</td>
+  <td style="text-align: left;">Jennifer’s core expertise is clearly the field of web design with CSS and it really shows in this largest of the sections. Even though you don’t need to memorize every detail it contains it is definitely worth working through in its entirity — particularly the CSS <code>FlexBox</code> and <code>Grid</code> content.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;">IV</td>
+  <td style="text-align: center;">JavaScript for Behavior</td>
+  <td style="text-align: center;">Skip</td>
+  <td style="text-align: left;">Replace with <a href="/reviews/books/eloqjs/">Eloquent JavaScript</a> which also covers HTTP.</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;">V</td>
+  <td style="text-align: center;">Web Images</td>
+  <td style="text-align: center;">Essential</td>
+  <td style="text-align: left;">Understanding images is one of the most underappreciated areas of web development. Images give up your personal location and can be used for payloads not to mention how important understanding the decision to use vector v.s. raster images.</td>
+  </tr>
+  </tbody>
+  </table>
+  <h2 id="chapter-1">Chapter 1</h2>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

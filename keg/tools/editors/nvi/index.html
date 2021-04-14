@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>NewVi <code>nex</code>/<code>nvi</code> Text Editor</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=NewVi <code>nex</code>/<code>nvi</code> Text Editor">NewVi <code>nex</code>/<code>nvi</code> Text Editor</a></h1>
+  <h2 id=subtitle><em>Exactly</em> Compatible with Original Vi</h2>
+  <p>The <code>nvi</code> editor is the current default editor on OpenBSD and available on several other Unix and Linux distributions. The fact that it is “bug-for-bug compatible” with the original <code>vi</code> makes is a <em>very</em> useful editor to install and learn since it makes it very clear when you are using a <a href="/tools/editors/vim/vimisms/">Vimism</a> such as <code>Control-V</code> or even forgetting to activate your <code>set ruler</code> or <code>set showmode</code> (which are not on by default in <code>vi</code>.</p>
+  <div class="co-tip">
+  <p>It is interesting to note that arrow keys <em>are</em> a part of the original <code>vi</code> — even in insert mode — even though learning to use <code>hjkl</code> is obviously preferable. Testing with <code>nvi</code> was the way this was discovered.</p>
+  <p>Also, you might want to create a <code>~/.exrc</code> section in your <code>~/.vimrc</code> so that you have the lines available to pull over if you are ever on a system that does not have <code>vim</code> installed. Many BSD systems don’t by default.</p>
+  </div>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

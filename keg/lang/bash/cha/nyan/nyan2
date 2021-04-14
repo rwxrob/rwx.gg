@@ -1,0 +1,16 @@
+#!/bin/bash
+
+declare -r clear=$'\033[H\033[2J'
+declare -r red=$'\033[38;2;255;0;0m'
+declare -r green=$'\033[38;2;0;255;0m'
+declare -r blue=$'\033[38;2;0;0;255m'
+declare -r white=$'\033[38;2;255;255;255m'
+declare -r reset=$'\033[0m'
+declare -r cline=$'\033[0;0H'
+
+echo $clear
+while true; do 
+  echo -n "${red}ニャン"
+  echo -n "${blue}Nyan"
+  sleep .002
+done

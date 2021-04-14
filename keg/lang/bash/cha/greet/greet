@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while true; do
+  read -p "Hey there, what's your name? " name
+  if [[ -n "{$name}" ]]; then
+    break
+  fi
+  echo "Sorry didn't catch that."
+done
+
+echo "Well nice you meet you, ${name}!"

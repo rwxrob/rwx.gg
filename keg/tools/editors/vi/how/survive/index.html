@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Survive Vi</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=Survive Vi">Survive Vi</a></h1>
+  <h2 id=subtitle>The Absolute Minimum You <em>Must</em> Learn</h2>
+  <p>People like to joke about how hard it is to exit Vi. It’s true that for years people would be suddenly forced to use Vi without expecting it, for example, when editing a <a href="https://duck.com/lite?kae=t&amp;q=%60crontab%60"><code>crontab</code></a> was a common one. Here are the absolute basics to help you survive your first encounter with Vi with a smile.</p>
+  <div class="co-fun">
+  <p>Now that <a href="https://duck.com/lite?kae=t&amp;q=Nano%20terminal%20editor">Nano terminal editor</a> is the default on all major Linux <a href="/tools/linux/distros/">distros</a> Vi users are the ones stuck not being able to exit.</p>
+  </div>
+  <p>Keep in mind that the arrow keys are now fully supported by Vi itself (not just Vim) even though you should learn to use <code>hjkl</code> navigation as soon as possible.</p>
+  <table>
+  <colgroup>
+  <col style="width: 26%" />
+  <col style="width: 13%" />
+  <col style="width: 59%" />
+  </colgroup>
+  <thead>
+  <tr class="header">
+  <th style="text-align: center;">Action</th>
+  <th style="text-align: center;">Mode</th>
+  <th style="text-align: left;">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;"><code>i</code></td>
+  <td style="text-align: center;">Command</td>
+  <td style="text-align: left;">Change into <code>-- INSERT --</code> mode.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>ESC</code></td>
+  <td style="text-align: center;"><code>INSERT</code></td>
+  <td style="text-align: left;">Escape <code>-- INSERT --</code> to Command.</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>←</code></td>
+  <td style="text-align: center;">Both</td>
+  <td style="text-align: left;">Move left.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>↓</code></td>
+  <td style="text-align: center;">Both</td>
+  <td style="text-align: left;">Move down.</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>↑</code></td>
+  <td style="text-align: center;">Both</td>
+  <td style="text-align: left;">Move up.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>→</code></td>
+  <td style="text-align: center;">Both</td>
+  <td style="text-align: left;">Move right.</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>:wq</code></td>
+  <td style="text-align: center;">Command</td>
+  <td style="text-align: left;">Save and quit.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>:q!</code></td>
+  <td style="text-align: center;">Command</td>
+  <td style="text-align: left;">Quit without saving.</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>:w</code></td>
+  <td style="text-align: center;">Command</td>
+  <td style="text-align: left;">Save without exiting.</td>
+  </tr>
+  </tbody>
+  </table>
+  <p>See that’s not so bad! Here’s a <a href="./visurvive.png">PNG</a> if you want a copy.</p>
+  <p>Seriously, that’s all you need to get started with Vi/m and never bother with Nano at all. In fact, that’s <em>easier</em> than learning Nano. Just say no to Nano!</p>
+  <div class="co-btw">
+  <p>The reason <code>ZZ</code> and <code>ZQ</code> and <code>Control-[</code> were removed from the survival guide is that too many beginners would experiment with different combinations having forgotten how to exit and end up accidentally doing <code>Control-Z</code> which backgrounds the process. This is yet another reason <code>nano</code> is so bad for beginners.</p>
+  </div>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

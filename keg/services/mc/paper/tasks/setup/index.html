@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Set Up PaperMC Server on Linux</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=Set Up PaperMC Server on Linux">Set Up PaperMC Server on Linux</a></h1>
+  <p>Here’s how to set up a <a href="https://duck.com/lite?kae=t&amp;q=PaperMC%20Minecraft%20server">PaperMC Minecraft server</a> in a simple way to get you started.</p>
+  <p>First, you will need to <a href="/tools/linux/server/tasks/setup/">set up a Linux server</a> if you haven’t already.</p>
+  <p>Then you should first <a href="/tools/linux/server/tasks/adduser/">create an account</a> specifically to run your Minecraft server. Let’s call the account <code>mc</code>. If you are doing this as another user or at home you can skip past it.</p>
+  <p>Login to server host.</p>
+  <pre class="sh"><code>ssh mc@myhost</code></pre>
+  <p>Change into your home directory.</p>
+  <pre class="sh"><code>cd</code></pre>
+  <p>Create a <code>paper</code> directory to contain server.</p>
+  <pre class="sh"><code>mkdir paper</code></pre>
+  <p>Change into the <code>paper</code> directory.</p>
+  <pre class="sh"><code>cd paper</code></pre>
+  <p>Find the paper downloadable Java <code>jar</code> file on the Web.</p>
+  <p>Copy the latest link address by selecting it.</p>
+  <div class="co-pwz">
+  <p>You <em>do not</em> need to do <code>Control-C</code> to copy on Linux! Simply select the text by highlighting it. Make sure you get the latest download link URL. <em>Don’t just use the following. It might be out of date.</em></p>
+  </div>
+  <p>Download the server jar file and name it <code>paper.jar</code> by using the command and pasting your URL. Make sure to follow any server redirects.</p>
+  <pre class="sh"><code>curl -L -o paper.jar https://papermc.io/api/v1/paper/1.15.2/325/download</code></pre>
+  <p>Check the human-readable size and type of the file after downloading it.</p>
+  <pre class="sh"><code>ls -lh paper.jar
+  file paper.jar</code></pre>
+  <p>Run the server <code>jar</code> file to create the <code>eula.txt</code> file.</p>
+  <pre class="sh"><code>java -jar paper.jar</code></pre>
+  <p>List the files. Find <code>eula.txt</code> and review the content (without editing just yet).</p>
+  <pre class="sh"><code>ls -lh eula.txt
+  cat eula.txt</code></pre>
+  <p>Agree to the EULA by editing the <code>eula.txt</code> file and changing <code>false</code> to <code>true</code>.</p>
+  <div class="co-tip">
+  <p>Although you probably have not yet learned about Perl and <a href="https://duck.com/lite?kae=t&amp;q=regular%20expressions">regular expressions</a> this is a perfect example of something that does not even need to be opened up with an editor. It is a safe enough change since the file is simple and the text string to be changed is unique. You could edit the <code>eula.txt</code> file <em>in place</em> like this:</p>
+  <pre class="sh"><code>perl -pi -e &#39;s/false/true/&#39; eula.txt</code></pre>
+  <p>Perl is the command line tool. The <code>-p</code> means to “print” it. The <code>-i</code> means to “print” it back to the file “in line” instead of just to the screen. The <code>-e</code> means to just do the command <code>s/false/true/</code>, which means to substitute the first thing with the second thing.</p>
+  <p>Be <em>really</em> careful if you try this out on other stuff because it is <em>very</em> powerful. You will eventually learn to be able to change things in 100s or even 1000s of files at once.</p>
+  </div>
+  <p>vi eula.txt</p>
+  <ul>
+  <li><p>Update Server Properties</p>
+  <ul>
+  <li>Set <code>server-port</code></li>
+  <li>Set <code>difficulty</code></li>
+  <li>Set <code>gamemode</code></li>
+  <li>Set <code>force-gamemode</code></li>
+  <li>Set <code>motd</code></li>
+  <li>Set other settings to taste.</li>
+  </ul></li>
+  <li><p>Run Server Jar with Java</p></li>
+  <li><p>Test Client Connection to Server</p></li>
+  <li><p>Op yourself.</p></li>
+  <li><p>Restart your server under screen so it does not go down.</p></li>
+  </ul>
+  <div class="co-pwz">
+  <p>You’ll probably want to hone and improve things over time. This is just for absolute beginners who barely know how to use the terminal command line. For example, no discussion of Java memory constraints is included.</p>
+  </div>
+  <h2 id="see-also">See Also</h2>
+  <ul>
+  <li><a href="https://papermc.io" class="uri">https://papermc.io</a></li>
+  </ul>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

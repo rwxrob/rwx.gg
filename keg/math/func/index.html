@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Learn to Code Functions from Math Functions</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title>Learn to Code Functions from Math Functions</h1>
+  <p>You might not remember functions from Math but if you do there’s a good chance you will better understand <a href="https://duck.com/lite?kae=t&amp;q=computer%20language%20functions">computer language functions</a> and <a href="https://duck.com/lite?kae=t&amp;q=procedures">procedures</a>.</p>
+  <p>Let’s start with the basics but first you need to understand the <a href="https://duck.com/lite?kae=t&amp;q=computer%20programming%20language%20math%20operators">computer programming language math operators</a>. Here’s a quick summary:</p>
+  <table>
+  <thead>
+  <tr class="header">
+  <th>Operator</th>
+  <th>Math</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td><code>+</code></td>
+  <td>Add</td>
+  </tr>
+  <tr class="even">
+  <td><code>-</code></td>
+  <td>Subtract</td>
+  </tr>
+  <tr class="odd">
+  <td><code>*</code></td>
+  <td>Multiply</td>
+  </tr>
+  <tr class="even">
+  <td><code>/</code></td>
+  <td>Divide</td>
+  </tr>
+  <tr class="odd">
+  <td><code>%</code></td>
+  <td>Remainder</td>
+  </tr>
+  <tr class="even">
+  <td><code>^</code></td>
+  <td>Exponent</td>
+  </tr>
+  </tbody>
+  </table>
+  <p>Not all languages use the same operators but these are pretty common.</p>
+  <p>You can test these out using <code>bc</code> from the command line.</p>
+  <h2 id="f-of-x-ftw">F of X FTW!</h2>
+  <p>Remember that whole “f of x” <code>f(x)</code> stuff? Here’s a simple example (using programming operators):</p>
+  <pre><code>f(x) = 2*x + 3
+  f(3) = 2*3 + 3
+  f(3) = 6 + 3
+  f(3) = 9 
+
+  f(x,y) = 2*x + 3*y +3
+  f(2,6) = 2*2 + 3*6 +3
+  f(2,6) = 4 + 18 +3
+  f(2,6) = 25</code></pre>
+  <p>In the above the <code>x</code> and <code>y</code> are <em>parameters</em> which are like slots that you put things into as if a machine. Parameters have names.</p>
+  <p>The numbers <code>3</code>, <code>2</code>, and <code>6</code> are <em>arguments</em> which to into the parameter slots of the function machine. Arguments are just values.</p>
+  <h2 id="moving-from-math-to-code">Moving from Math to Code</h2>
+  <p>Using the same idea we can do things that are not Math related, for example print a greeting.</p>
+  <pre><code>f(name) = print &quot;Hi there, $name.&quot;
+  f(Pete) = print &quot;Hi there, Pete.&quot;</code></pre>
+  <p>Now that’s not <em>actually</em> how you would write that, but you get the idea. Here’s the actual code in four different languages. All of the following output ‘Hey there, Pete.’</p>
+  <p>Bash</p>
+  <pre class="bash"><code>hey () {
+    name=&quot;$1&quot;
+    echo &quot;Hey there, ${name}.&quot;
+  }
+  hey Pete</code></pre>
+  <p>Python</p>
+  <pre class="python"><code>def hey(name): print(f&#39;Hey there, {name}.&#39;)
+  hey(&quot;Pete&quot;)
+  </code></pre>
+  <p>JavaScript</p>
+  <pre class="js"><code>const hey = name =&gt; console.log(`Hey there, ${name}.`)
+  hey(&quot;Pete&quot;)</code></pre>
+  <p>Golang</p>
+  <pre class="go"><code>import &quot;fmt&quot;
+  func hey(name string) {
+    fmt.Printf(&quot;Hey there, %v.\n&quot;, name)
+  }
+  hey(&quot;Pete&quot;)</code></pre>
+  <p>Even though we have been calling the above a <em>function</em> it is really more of a <em>procedure</em> because it is a set of instructions and not really a machine the spits out things when we put in things.</p>
+  <h2 id="how-about-math-functions-in-the-same-languages">How About Math Functions in the Same Languages</h2>
+  <p>Remember that Match function we started out with?</p>
+  <pre><code>f(x,y) = 2*x + 3*y +3</code></pre>
+  <p>Let’s code that in the same four languages. All of these print <code>The result is 25</code>.</p>
+  <p>Bash</p>
+  <pre class="bash"><code>foo () {
+    x=&quot;$1&quot;
+    y=&quot;$2&quot;
+    echo $(( 2*x + 3*y ))
+  }
+  echo &quot;The result is $(foo 2 6)&quot;</code></pre>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

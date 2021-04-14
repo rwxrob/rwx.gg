@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Get WSL Ubuntu on Windows 10</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=Get WSL Ubuntu on Windows 10">Get WSL Ubuntu on Windows 10</a></h1>
+  <h2 id=subtitle>Windows 10 Subsystem for Linux</h2>
+  <p>The fastest way to get a terminal on Windows 10 is to enable the <em>Windows Subsystem for Linux</em> (commonly called WSL) by using the <a href="https://ubuntu.com/blog/new-installation-options-coming-for-ubuntu-wsl">built in installation command</a>.</p>
+  <p>The rest of this contains the earlier instructions on how to do the same thing. You may not need them if you do the stuff above correctly.</p>
+  <div class="co-fyi">
+  <p>All this WSL activation will be a thing of the past when the next version of Microsoft Windows is released with WSL2 and the new terminal included automatically. All this only applies to Windows 10.</p>
+  </div>
+  <p>Before you do anything else make sure your work is saved and stop everything else you are doing on the computer because this process requires restarting it.</p>
+  <p>First we need to install Ubuntu from the Microsoft Store. You can skip the prompt to “Sign In”, which isn’t required.</p>
+  <p>Then since you are here go ahead and install the new Windows Terminal (Preview).</p>
+  <p>When the Ubuntu install finished click on “Launch”.</p>
+  <p>You’ll see a terminal pop up containing something like the following text:</p>
+  <pre class="out"><code>Installing, this may take a few minutes...
+  WslRegisterDistribution failed with error: 0x8007019e
+  The Windows Subsystem for Linux optional component is not enabled. Please enable it and try again.
+  See https://aka.ms/wslinstall for details.
+  Press any key to continue...</code></pre>
+  <p>Don’t worry about the error. It just means that WSL isn’t activated, which you will do now. Go ahead and open the <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" class="uri">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a> link and follow the instructions, but here they are again for convenience:</p>
+  <p>Open PowerShell by typing it into the search and watching for it to pop up as an <em>App</em>. DO NOT SELECT THE APP! Notice the “Run as Administrator” to the right and select that instead.</p>
+  <div class="co-check">
+  <p>Be sure that you open PowerShell with <em>Run as Administrator</em> or it won’t work.</p>
+  </div>
+  <p>You should see a blue PowerShell terminal open up.</p>
+  <p>Paste the following into the blue PowerShell terminal window at the command line:</p>
+  <pre class="powershell"><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></pre>
+  <p>This will output something like the following to the screen:</p>
+  <pre class="out"><code>PS C:\Windows\system32&gt; Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+  Do you want to restart the computer to complete this operation now?
+  [Y] Yes  [N] No  [?] Help (default is &quot;Y&quot;):</code></pre>
+  <p>You’ll have to accept and reboot.</p>
+  <p>After the reboot type “Ubuntu” into your Windows search bar to start it up.</p>
+  <p>You’ll see a bunch of text scroll on the screen since Ubuntu is being installed. Wait for it install and be patient. There will be long pauses where nothing happens on the screen.</p>
+  <pre class="out"><code>Installing, this may take a few minutes...</code></pre>
+  <p>After the install completes you will be prompted for a username.</p>
+  <pre class="out"><code>Please create a default UNIX user account. The username does not need to match your Windows username.
+  For more information visit: https://aka.ms/wslusers
+  Enter new UNIX username:</code></pre>
+  <p>Pick a username that uses nothing but lowercase letters and numbers (so long as it does not start with one).</p>
+  <p>Then it will prompt you for a password. IT WILL NOT SHOW YOU TYPING THE PASSWORD BUT IT IS WORKING! This password does not need to be particularly long since only you will be using it on this local system.</p>
+  <pre class="out"><code>passwd: password updated successfully</code></pre>
+  <p>That completes the <em>basic</em> Ubuntu installation but you’re not done yet.</p>
+  <pre class="out"><code>Installation successful!
+  To run a command as administrator (user &quot;root&quot;), use &quot;sudo &lt;command&gt;&quot;.
+  See &quot;man sudo_root&quot; for details.</code></pre>
+  <p>You <em>still</em> need to update and upgrade.</p>
+  <div class="co-warning">
+  <p>The first think you should do with <em>any</em> new Linux installation is update and upgrade because the version of the operating system installation usually lags behind by several months.</p>
+  </div>
+  <p>First let’s get the latest list of system packages for the update and upgrade.</p>
+  <pre class="sh"><code>sudo apt update</code></pre>
+  <p>You will see a lot of stuff scroll on the screen and this can take a while. Be patient.</p>
+  <pre class="out"><code>...
+  Fetched 16.5 MB in 15s (1080 kB/s)
+  Reading package lists... Done
+  Building dependency tree
+  Reading state information... Done
+  10 packages can be upgraded. Run &#39;apt list --upgradable&#39; to see them.</code></pre>
+  <p>Now it’s time to upgrade.</p>
+  <div class="co-careful">
+  <p>It’s easy to confuse the words <code>update</code> with <code>upgrade</code>. The two are <em>very</em> different. The <code>update</code> is used regularly to get a fresh list of the software packages available while <code>upgrade</code> does a <strong><em>full upgrade of your operating system</em></strong>. Even though it is a good idea to <code>upgrade</code> your system frequently to avoid security vulnerabilities it can be a big deal and you might not want to risk it until you are ready. Just be sure you understand the difference.</p>
+  </div>
+  <p>Enter the following to start the <code>upgrade</code> process.</p>
+  <pre class="sh"><code>sudo apt upgrade</code></pre>
+  <p>You’ll be show the packages that will be upgraded and prompted to continue.</p>
+  <pre class="out"><code>...
+  After this operation, 99.3 kB of additional disk space will be used.
+  Do you want to continue? [Y/n]y</code></pre>
+  <p>This should take quite a while depending on how old the installation package was. Be patient.</p>
+  <p>Once this finishes are good to go and can start using it or installing other software that you need.</p>
+  <div class="co-warning">
+  <p>When you attempt your first copy and paste it might not go as usual. If so, select the text, move to where you want to paste it, then right click to do the pasting. This is regularly an issue for those doing <a href="https://overthewire.org">OverTheWire</a>.</p>
+  </div>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

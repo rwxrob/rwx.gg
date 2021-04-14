@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Language Learning Challenges</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=Language Learning Challenges">Language Learning Challenges</a></h1>
+  <h2 id=subtitle>Gamified Way to Drive Your Coding Skills</h2>
+  <p>These challenges are designed to be researched and coded in order to incrementally learn new concepts and skills for any language. The challenges require completing several combined tasks which you will need to research and learn for your target language. You can do them all in one language at a time or learn several languages at the same time. (Mr. Rob recommends Bash, Go, C, JavaScript/TypeScript, Python, Ruby, and Rust.)</p>
+  <p>Note that all of these challenges assume you will be doing them from a Linux command line so you will first need to become proficient with Bash and a terminal editor such as the recommended Vim. This is by design. If you can learn to edit, compile, and run code from the command line you can do it <em>anywhere</em> else, but the reverse is simply not true. Since most coding these days involves Linux and the command line you will be ahead of everyone else who doesn’t learn it that way. It’s a simple fact.</p>
+  <div class="Remember">
+  <p>Remember to include the name of the language in your research about the given topics. Otherwise, your search results will often be much too broad.</p>
+  </div>
+  <ul>
+  <li><p><a href="/lang/cha/hello/"><strong>Hello World</strong></a><br />
+  Create program that prints <code>Hello World!</code> when run from the command line or console locally.<br />
+  [<em>SheBang, Standard Output, Printing, Strings</em>]</p></li>
+  <li><p><a href="/lang/cha/hey/"><strong>Hey There</strong></a><br />
+  Create a program that prints <code>Hey there</code> by default or <code>Hey there You</code> if <code>You</code> is passed as an argument and <code>Hey there You over there</code> if <code>'You over there'</code> is passed as the first argument (hint quotes).<br />
+  [<em>Variables, Parameters, Arguments, Formatted Printing</em>]</p></li>
+  <li><p><a href="/lang/cha/hi/"><strong>Hi You</strong></a><br />
+  Create a program named <code>hi</code> that prints <code>Hi there</code> by default but prints <code>Hi &lt;arg&gt;</code> if there is a command line argument. If a one of two special names (like <code>Linux</code> and <code>Rob</code>) are passed then instead of the default the script should print something special like <code>Woah &lt;arg&gt;,   you rock!</code> If a specific insult name (like <code>Dork</code>) is used the script should print <code>Um, no need to be rude.</code><br />
+  [<em>Algorithms, Condition Statements, Boolean Logic and Operators</em>]</p></li>
+  <li><p><a href="/lang/cha/nyan/"><strong>Nyan Cat</strong></a><br />
+  Write a command-line program that loops forever printing the word <code>Nyan</code> (or something).<br />
+  [<em>Looping, Signals, Interrupts, <code>Control-C</code>, Printing to Same Line</em>]</p></li>
+  <li><p><a href="/lang/cha/rgb/"><strong>RGB Command</strong></a><br />
+  Create a command that takes three arguments for red, green, and blue that are numbers between 0 and 255. Combine the numbers into a vt100 (ANSI) RGB color escape and print the escape sequence invisibly coloring anything printed after. Test by printing different things in different colors. Once that works go back and assign random default color values for each if less than three arguments are passed.<br />
+  [<em>VT100 ANSI Escape Characters, Terminal RGB Color Escapes, Variables, Quoting Backslash Escape Characters</em>, <em>Random Number Generation</em>]</p></li>
+  <li><p><a href="/lang/cha/greet/"><strong>Greetings</strong></a><br />
+  Create a command line program that when run greets the user and prompts them to enter their name. Then read the name and print a nice personalized greeting using it. If the name is not entered or contains only whitespace then print a message about not understanding and prompt again for a good name. Repeat the message and prompt forever until a good name is entered.</p></li>
+  <li><p><a href="/lang/cha/now/"><strong>Now</strong></a><br />
+  Create a program called <code>now</code> that prints a specific human-friendly time stamp suitable for including in an article or a blog (Monday, June 29, 2020, 8:28:26PM). Create <em>another</em> program called <code>hnow</code> that calls the first program and adds a default Markdown header prefix <code>##</code>. Have <code>hnow</code> accept one argument and use that instead of the default if set. Demonstrate using <code>hnow</code> from <code>vi</code> by combining it with <code>!!</code> correctly.</p></li>
+  <li><p><a href="/lang/cha/cmt/"><strong>Comment Out</strong></a><br />
+  Create a program called <code>cmt</code> that reads in every line of input and adds a comment prefix to each line and outputs the newly prefixed line. Once that’s complete have the program check for arguments and use them as the prefix instead.</p></li>
+  <li><p><a href="/lang/cha/waffles/"><strong>Do You Like Waffles?</strong></a><br />
+  Write a command-line program that simulates the now ancient video <a href="https://youtu.be/UtlaTNI1TaU">Do You Like Waffles</a> prompting the user with questions and checking their responses. If <code>yes</code> then ask the next question. If <code>no</code> then print something snarky and end the program. If nothing is entered (or just empty spaces) then ask the same question again.</p></li>
+  </ul>
+  <!--
+
+  |('agecalc')||||
+  |('badgers')||||
+  |('basecount')||||
+  |('eightball')||||
+  |('quote')||||
+  |('hex2rgb')||||
+  |('roll')||||
+  |('enigma')||||
+  |('talltale')||||
+  |('replace')||||
+  |('story')||||
+  |('weather')||||
+  |('todo')||||
+  |('notes')||||
+  |('repo')||||
+  |('panmake')||||
+  |('serve')||||
+  |('torthare')||||
+  |('scrape')||||
+  |('graph')||||
+  |('cpick')||||
+  |('tabcomp')||||
+
+  -->
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

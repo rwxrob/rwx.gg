@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+'''
+check for command line arguments
+if there is at least one argument then print 'Hey' and then the first argument and exit
+print 'Hey'
+'''
+
+import sys
+
+if len(sys.argv) > 1:
+    print(f'Hey {sys.argv[1]}')
+    exit()
+
+print('Hey')

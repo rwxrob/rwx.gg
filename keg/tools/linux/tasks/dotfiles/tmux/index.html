@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Set Up TMUX Dotfiles Configuration Subdirectory</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=Set Up TMUX Dotfiles Configuration Subdirectory">Set Up TMUX Dotfiles Configuration Subdirectory</a></h1>
+  <h2 id=subtitle>Single File, 100% Portable, No Blocking Dependencies</h2>
+  <p>Make sure you have setup your <a href="../">dotfiles</a> repo.</p>
+  <p>Change into your <code>dotfiles</code> repo.</p>
+  <pre class="sh"><code>cd ~/repos/gitlab.com/rwxyou/dotfiles</code></pre>
+  <p>Create a <code>tmux</code> directory.</p>
+  <pre class="sh"><code>mkdir tmux</code></pre>
+  <p>Change into the <code>tmux</code> directory.</p>
+  <pre class="sh"><code>cd tmux</code></pre>
+  <p>Create or obtain a <a href="/tools/tmux/">TMUX configuration file</a> and place it within directory as <code>tmux.conf</code>.</p>
+  <pre class="sh"><code>curl -LO https://rwx.gg/tools/tmux/tmux.conf</code></pre>
+  <p>Create a <code>setup</code> script that prints <code>Configuring TMUX</code>.</p>
+  <pre class="sh"><code>#!/bin/bash
+  echo Configuring TMUX</code></pre>
+  <p>Test that your script works.</p>
+  <pre class="sh"><code>./setup</code></pre>
+  <pre class="out"><code>Configuring TMUX</code></pre>
+  <p>Add a line to create a <a href="https://duck.com/lite?kae=t&amp;q=symbolic%20link">symbolic link</a> from your <code>$HOME</code> directory to the local <code>tmux.conf</code> file. Don’t forget the full paths in the command. You can also add another line to confirm that the link was created successfully.</p>
+  <pre class="sh"><code>#!/bin/bash
+  echo Configuring TMUX
+  ln -s &quot;$PWD/tmux.conf&quot; &quot;$HOME/.tmux.conf&quot;
+  ls -la ~/.tmux.conf</code></pre>
+  <p>Run it to create your link.</p>
+  <pre class="out"><code>Configuring TMUX
+  lrwxrwxrwx 1 sample sample 55 May 27 22:12 /home/rwxrob/.tmux.conf -&gt; /home/rwxrob/repos/gitlab.com/rwxyou/dotfiles/tmux/tmux.conf</code></pre>
+  <p>That’s it. You should just be able to edit any file now to see the differences.</p>
+  <p>You might also want to add a <code>README.md</code> describing the process of how to run <code>./setup</code> and perhaps make your dotfiles directory public so you can share your configuration with others.</p>
+  <p>If you want to get really fancy, you can actually add some code to detect if <code>tmux</code> has been installed on the system and prompt them to install it first. Here’s the full script:</p>
+  <pre class="sh"><code>#!/bin/bash
+
+  if [[ -z &quot;$(which vim)&quot; || -z &quot;$(which vimtutor)&quot; ]]; then
+    echo Need to install full vim.
+    exit 1
+  fi
+
+  echo Configuring Vim
+  ln -sf &quot;$PWD/vimrc&quot; &quot;$HOME/.vimrc&quot;
+  ls -l &quot;$HOME/.vimrc&quot;</code></pre>
+  <p>Once you know it runs. Add a line to create a <a href="https://duck.com/lite?kae=t&amp;q=symbolic%20link">symbolic link</a> to <code>~/.tmux.conf</code>.</p>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+declare -r clear=$'\033[H\033[2J'
+declare -r red=$'\033[38;2;255;0;0m'
+declare -r green=$'\033[38;2;0;255;0m'
+declare -r blue=$'\033[38;2;0;0;255m'
+declare -r white=$'\033[38;2;255;255;255m'
+declare -r reset=$'\033[0m'
+
+# f(x) = (2*x) +1
+# f(3) = (2*3) +1
+# x: parameter
+# 3: argument
+
+# declare a *true* function
+doyoulike () {
+  declare -r yes='^y(e(s|p(pers)?|ah))?$'
+  declare answer
+  echo "${clear}${green}Do you like $1?${reset}"
+  read answer
+  if [[ "${answer,,}" =~ $yes  ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+waffles3 () {
+  declare -i i=0                             # init
+  while [[ $i < 3 ]]; do                     # check
+    #sleep 2
+    echo "${green}Waffles! (count $i)"
+    i=i+1                                    # change
+  done
+}
+
+fail () {
+  echo "${red}Okay then.$reset"
+  exit 1
+}
+
+doyoulike waffles || fail
+doyoulike pancakes ||  fail
+doyoulike 'French toast' ||  fail
+
+echo $clear
+echo "${green}Doot do da doot can't wait to get a mouthful.$reset"
+waffles3
+

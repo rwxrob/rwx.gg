@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Markdown</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title class=duck><a href="https://duckduckgo.com/lite?kae=t&q=Markdown">Markdown</a></h1>
+  <h2 id=subtitle>Invented by Writers, Not Scientists</h2>
+  <p>Markdown is a simple <a href="/what/markup/">markup</a> language invented by writers who didn’t want to write <a href="/lang/html/">HTML</a>. Markdown has become the standard for most technical writing and is supported on Reddit, StackExchange, Discord, GitLab, GitHub, and pretty much everywhere else.</p>
+  <table>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;"><a href="/lang/md/basic/">Basic</a></td>
+  <td style="text-align: center;">Emphasis on simplicity and compatibility</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><a href="/lang/md/common/">Common</a></td>
+  <td style="text-align: center;">General industry standard (but no tables)</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><a href="/lang/md/pandoc/">Pandoc</a></td>
+  <td style="text-align: center;">Maximum power and flexibility, no HTML dep</td>
+  </tr>
+  </tbody>
+  </table>
+  <div class="co-fyi">
+  <p>Modern companies such as GitLab depend <em>heavily</em> on Markdown for everything they do. Watch any of their release conference videos to see examples of all the documentation and presentations that make extensive use of Markdown (specifically <a href="/lang/md/common/">CommonMark</a> since GitLab as an organization does not have a need for the Math and other advantages of Pandoc Markdown.)</p>
+  </div>
+  <h2 id="types-of-markdown">Types of Markdown</h2>
+  <p>Eventually you’ll want to use <a href="/lang/md/pandoc/">Pandoc Markdown</a> for everything. (In fact, <a href="https://gitlab.com/rwx.gg/README/-/tree/master/md">this document</a> is written in it.) Pandoc Markdown is far and away the most powerful, sustainable, and supported format for capturing knowledge source, which is why the R language project adopted it as their language documentation format.</p>
+  <p>However, you can learn <a href="/lang/md/basic/">basic Pandoc Markdown</a> in less than 30 minutes and it will work <em>everywhere</em>.</p>
+  <p>Why the differences?</p>
+  <p>The original Markdown was never standardized and has evolved into more than a dozen different flavors many of which are incompatible with one another. Thankfully there are only three versions that really matter:</p>
+  <h2 id="standard-knowledge-source-language">Standard Knowledge Source Language</h2>
+  <p>Markdown has become the closest thing to a universal standard for writing all documentation today. In addition, authors write entire textbooks and novels in Markdown these days. When combined with a tool like <a href="/tools/pandoc/">Pandoc</a> your Markdown can be converted to <em>every other format on the planet</em>. Markdown is the <em>only</em> markup writing language that can claim this. Therefore, <em>everyone</em> should learn it from those needing a solid, sustainable way to take notes, to those creating entire <a href="/what/knowledge/base/">knowledge bases</a>. Ironically Markdown is practically not taught at all today in any educational setting.</p>
+  <div class="co-faq">
+  <h2 id="what-about-wikis">What about wikis?</h2>
+  <p><a href="https://duck.com/lite?kae=t&amp;q=All%20wiki%20languages">All wiki languages</a> are at least as complicated as HTML to learn. It’s no surprise that they were invented by programmers and not writers, like Markdown was. <a href="/what/wikis/">Wikis</a> obviously do have a place, however.</p>
+  <h2 id="what-about-latex">What about LaTeX?</h2>
+  <p>It is fully supported by <a href="/lang/md/pandoc/">Pandoc Markdown</a>.</p>
+  <h2 id="what-about-restructuredtext">What about reStructuredText?</h2>
+  <p>You didn’t really ask that, did you?</p>
+  <p>RST lost because it is so damn horrible and idiotically designed. Clearly the creators had nothing but documenting Python code in mind when they designed it.</p>
+  </div>
+  <h2 id="see-also">See Also</h2>
+  <ul>
+  <li><a href="https://getgrav.org/">Grav, Modern Open Source Flat-File CMS</a></li>
+  </ul>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

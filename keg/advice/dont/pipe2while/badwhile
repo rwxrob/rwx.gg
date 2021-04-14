@@ -1,0 +1,8 @@
+#!/bin/bash
+myvar="a value"
+declare -i count=0
+grep something somefile | while read line; do
+  echo "$myvar: $line"
+  count+=1
+done
+echo "Count: $count"

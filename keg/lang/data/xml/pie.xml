@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record>
+  <pie>Apple</pie>
+  <numbers>
+    <val>10</val>
+    <val>3.141592653589</val>
+    <val>6.673e-11</val>
+  </numbers>
+  <likes val=true/>
+</record>

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+mkmanifest () {
+  declare line
+  while IFS= read -r line; do
+    line=${line#./}
+    [[ "$line" == . ]] && continue
+    echo "$line"
+  done <<< $(find . -name 'README.md' -printf "%h\n"| sort -d) > MANIFEST
+}
+
+render () {
+  declare dir="$1"
+  echo Building "'$dir'"
+  pandoc -s -o "$dir/index.html" --quiet --template=assets/template.html "$dir/README.md"
+}
+
+if [[ -n "$*" ]];then
+  for i in "$@"; do
+    i=${i%/README.md}
+    render $i
+  done
+  exit
+fi
+
+mkmanifest
+render "."
+
+declare -a pids
+while IFS= read -r node; do
+  render "$node" &
+  pids+=($!)
+done < ./MANIFEST
+
+for pid in ${pids[*]}; do
+  wait $pid
+done

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>“Greetings” Challenge</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title>“Greetings” Challenge</h1>
+  <p>Create a command line program that when run greets the user and prompts them to enter their name. Then read the name and print a nice personalized greeting using it. If the name is not entered or contains only whitespace then print a message about not understanding and prompt again for a good name. Repeat the message and prompt forever until a good name is entered.</p>
+  <h2 id="requirements">Requirements</h2>
+  <ul>
+  <li>Must include a <em>safe</em> shebang line if a script</li>
+  <li>When <code>./greet</code> then print <code>Greetings! What's your name?</code></li>
+  <li>Read user name from one line of standard input</li>
+  <li>When <code>You</code> entered then prints <code>Welcome, You! It's good to meet you."</code></li>
+  <li>When name is empty then print <code>Sorry, didn't catch that.</code></li>
+  <li>When name is just spaces then print <code>Sorry, didn't catch that.</code></li>
+  <li>When name is tabs then print <code>Sorry, didn't catch that.</code></li>
+  <li>Prompt again forever until name is entered if empty</li>
+  <li>Use an infinite loop design breaking out when name is good.</li>
+  </ul>
+  <h2 id="bonus">Bonus</h2>
+  <ul>
+  <li>Write the algorithm first as comments using natural language</li>
+  <li>Validate using language test framework.</li>
+  </ul>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

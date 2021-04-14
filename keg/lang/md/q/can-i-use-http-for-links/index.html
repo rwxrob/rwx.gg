@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Basic Markdown</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title>Basic Markdown</h1>
+  <h2 id=subtitle>Simplicity and Compatibility</h2>
+  <p>Here is quick overview that you can complete in 20 minutes covering the most basic, compatible <a href="/lang/md/">Markdown</a> everyone should learn. The priority is on simplicity and maximum compatibility. It allows your content to be used <em>everywhere</em>. There is no more ubiquitous form of knowledge storage.</p>
+  <ol type="1">
+  <li><a href="#paragraphs">Paragraphs</a></li>
+  <li><a href="#formatting">Formatting</a></li>
+  <li><a href="#escaping">Escaping</a></li>
+  <li><a href="#headings">Headings</a></li>
+  <li><a href="#links-hyperlinks">Links / Hyperlinks</a>
+  <ol type="1">
+  <li><a href="#hyperlinked-words">Hyperlinked Words</a></li>
+  <li><a href="#autolinked-urls">Autolinked URLs</a></li>
+  </ol></li>
+  <li><a href="#images">Images</a></li>
+  <li><a href="#lists">Lists</a></li>
+  <li><a href="#separators">Separators</a></li>
+  <li><a href="#hard-returns">Hard Returns</a></li>
+  <li><a href="#blocks">Blocks</a>
+  <ol type="1">
+  <li><a href="#plain">Plain</a></li>
+  <li><a href="#code-fences">Code Fences</a>
+  <ol type="1">
+  <li><a href="#dont-forget-the-blank-lines">Don’t Forget the Blank Lines</a></li>
+  <li><a href="#exception-for-markdown">Exception for Markdown</a></li>
+  </ol></li>
+  </ol></li>
+  <li><a href="#blockquotes">Blockquotes</a></li>
+  <li><a href="#comments">Comments</a></li>
+  <li><a href="#faq">FAQ</a>
+  <ol type="1">
+  <li><a href="#why-not-use-tables">Why Not Use Tables?</a></li>
+  <li><a href="#what-about-github-tables">What About GitHub Tables?</a></li>
+  <li><a href="#cant-i-use-reference-links-at-the-bottom">Can’t I Use Reference Links at the Bottom?</a></li>
+  <li><a href="#what-about-_-underscore">What About _ Underscore?</a></li>
+  <li>[Can’t I Just Use <code>http</code> for Links?]</li>
+  </ol></li>
+  </ol>
+  <h2 id="paragraphs">Paragraphs</h2>
+  <p>A paragraph is either a long <em>single</em> line of text followed by a blank line <em>or</em> multiple lines one after another. Either is fine and there are solid arguments to use one or the other. You pick but it’s a good idea to use one consistently throughout the same knowledge base.</p>
+  <p>To move paragraphs around all you have to do is copy that single line (<code>yy</code> or <code>dd</code> in <a href="/tools/editors/vi/">Vi</a>). Single-line paragraphs always properly wrap no matter what editor you are using or its width. Don’t forget to put one blank line before and after each paragraph to separate it from the rest. Paragraphs frequently contain <a href="#formatting">formatting</a>.</p>
+  <p>Also note that this does <em>not</em> apply to the YAML front-matter at the top of a Markdown document. This is explained more in <a href="/lang/md/pandoc/light/">Pandoc Light Markdown</a> but just know that limiting text blocks to 72 — small enough for allow for line numbering and a gutter on the left-side required by Vim and other editors — columns is wise for such things since YAML depends so heavily on clean left-side indentation.</p>
+  <p>:::</p>
+  <pre><code>
+  ## Example of Good Wrapping
+
+  This is a rather long paragraph that extends well beyond the 80 characters of most terminals and in the old days would be chopped into smaller individual lines rather than this big long huge line.
+  </code></pre>
+  <p>Although every Markdown tool allows multiple lines to be grouped into a single paragraph so long as a they are followed by a blank line this practice is rather bad when editing those same files with editor or terminal or <a href="/tools/tmux/">tmux</a> pane widths that are less than the line length. They are completely unreadable. Stay safe, just use single long lines. All modern (and even most ancient editors) support auto-wrapping the line in the terminal rather than effectively hard wrapping it in the display.</p>
+  <pre class="chopme"><code>
+  ## Example of Bad Wrapping
+
+  This is a rather long paragraph that has been chopped forcefully into
+  individual likes of less than 80 characters each. While this might look
+  reasoably well on a standard 80 character terminal it looks horrible when in
+  modern TMUX panes that might contain far less than that and wastes available
+  characters when more are available.
+  </code></pre>
+  <h2 id="formatting">Formatting</h2>
+  <p>One star for <em>italics</em>:</p>
+  <pre class="markdown"><code>
+  one star for *italics* 
+  </code></pre>
+  <p>Two stars for <strong>bold</strong>:</p>
+  <pre class="markdown"><code>
+  two stars for **bold**
+  </code></pre>
+  <p>Three stars for <strong><em>bold italics</em></strong>:</p>
+  <pre class="markdown"><code>
+  three stars for ***bold italics***
+  </code></pre>
+  <p>Backticks for <code>code</code> also known as <code>monospaced</code>:</p>
+  <pre class="markdown"><code>
+  backticks for `monospaced`
+  </code></pre>
+  <p><a href="#what-about-_-underscore">What about _ underscore?</a></p>
+  <h2 id="escaping">Escaping</h2>
+  <p>Any time you don’t want, say, a star (<code>*</code>) to be recognized by the Markdown parser just put a backslash in front of it. This goes for all the other special symbols used in Markdown. In fact, you can put a backslash (<code>\</code>) in front of any character whatsoever in Pandoc Markdown to cause it to be used as is.</p>
+  <div class="co-pwz">
+  <p>One particularly common character to need escaping is the dollar sign (<code>$</code>). This is because Pandoc supports the inclusion of LaTeX for math notation and uses the dollar sign to mark it. Jut remember to always put a backslash in front of it and you are fine.</p>
+  </div>
+  <h2 id="headings">Headings</h2>
+  <p>Headings (often incorrectly called headers) begin with 1-6 hashtags (<code>#</code>) followed by a space and then the title text followed by a single blank line.</p>
+  <pre class="markdown"><code>
+  # Level One
+
+  Paragraphs and such here.
+
+  ## Level Two
+
+  Paragraphs and such here.
+  </code></pre>
+  <p>Formatting is allowed in headings but can be problematic with some renderers. Avoid if you can.</p>
+  <div class="co-tip">
+  <p>Generally you should never have more than one first level heading (<code># Heading One</code>) because search engines prioritize it. When using Pandoc you will not even need a level one heading because the <code>Title</code> is better placed in the meta-data property instead and rendered with the Pandoc Template.</p>
+  </div>
+  <h2 id="links-hyperlinks">Links / Hyperlinks</h2>
+  <p>Hyperlinks (stuff you click on) come in three basic forms:</p>
+  <ol type="1">
+  <li>Words</li>
+  <li>URLs</li>
+  <li>Images</li>
+  </ol>
+  <h3 id="hyperlinked-words">Hyperlinked Words</h3>
+  <p>The most common link in Markdown is just words you can click on that take you to <a href="#top">local</a> places or <a href="https://rwxrob.live">external sites</a>. The web address must be either pointing to a remote site or so something on the same site that document is on.</p>
+  <pre class="markdown"><code>
+  Here is a [link to rwx.gg](https://rwx.gg).
+  </code></pre>
+  <h3 id="autolinked-urls">Autolinked URLs</h3>
+  <p>Sometimes you want to show the full web address.</p>
+  <pre class="markdown"><code>
+  Here is URL to &lt;https://rwx.gg/md&gt; that will appear in full.
+  </code></pre>
+  <p>[Can’t I just use <code>http</code> for links?]</p>
+  <p>This also works with other link types besides <code>http</code>. (Yes, there are several other URL schemas.)</p>
+  <pre class="markdown"><code>
+  Mail me at &lt;mailto:rwx@robs.io&gt;.  
+  Phone me at &lt;tel:555-555-5555&gt;
+  </code></pre>
+  <h2 id="images">Images</h2>
+  <p>Images are just links with an exclamation point in front. Make sure to put a blank line before and after any image for maximum compatibility. Inline images are not widely supported and mess up other formatting in almost all cases.</p>
+  <pre class="markdown"><code>
+  ![gnome](/assets/img/mr-rob-gnome.jpg)
+  </code></pre>
+  <p><img src="https://rwx.gg/assets/img/mr-rob-gnome.jpg" /></p>
+  <p>Images can also be used as links.</p>
+  <pre class="markdown"><code>
+  [![RWXROB](/assets/img/mr-rob-gnome.jpg)](https://rwxrob.live)
+
+  </code></pre>
+  <p><a href="https://rwxrob.live" class="nodecor"><img src="/assets/img/mr-rob-gnome.jpg" alt="gnome" /></a></p>
+  <div class="co-tip">
+  <p>Since storing video files with your site is usually rather prohibitive due to their size, consider taking a screenshot of the first frame of the video hosted on a video hosting site and using that to link to the external video on that site. That way the page will still load properly even if you do not have Internet access which would otherwise block embedding the video in the page instead. Besides, embedding videos is generally a really bad idea because it adds HTML to your Markdown unnecessarily causing it to be incompatible with other potential rendering formats.</p>
+  </div>
+  <h2 id="lists">Lists</h2>
+  <p>Simple lists are supported by pretty much everything. Put the list items one to a line. Make sure to put a blank line after the list.</p>
+  <p>Use stars followed by spaces (<code>*</code>) for bulleted (unordered) lists:</p>
+  <pre class="markdown"><code>
+  * some
+  * thing
+  * here
+  </code></pre>
+  <ul>
+  <li>some</li>
+  <li>thing</li>
+  <li>here</li>
+  </ul>
+  <p>Use the number one followed by a period and a space (<code>1.</code>) for numbered (ordered) lists:</p>
+  <pre class="markdown"><code>
+  1. HTML 
+  1. CSS
+  1. JavaScript
+  1. Go
+  1. Bash
+  </code></pre>
+  <ol type="1">
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>Go</li>
+  <li>Bash</li>
+  </ol>
+  <p>Always use <code>1.</code> so that if you change the order you do not have to renumber the source itself. It will automatically change the number order when rendered.</p>
+  <h2 id="separators">Separators</h2>
+  <p>Also called “horizontal rule.” These just break up the page usually with a horizontal line.</p>
+  <pre class="markdown"><code>
+  ----
+  </code></pre>
+  <p>Here comes an example of a separator.</p>
+  <hr />
+  <p>Use four dashes for consistency even though there are dozens of ways to indicate separation (some of which allow stars to be used as well). This consistency allows you to easily find your separators and keeps them from being confused with YAML markers (which use three dashes) and inline formatting (which uses stars <code>*</code>).</p>
+  <h2 id="hard-returns">Hard Returns</h2>
+  <p>Hard returns are a way of starting a new line within a given paragraph. Type two spaces (<code>␣␣</code>) followed by the line return.</p>
+  <pre class="markdown"><code>
+  Roses are red␣␣
+  Violets are blue
+  </code></pre>
+  <p>Rose are red<br />
+  Violets are blue</p>
+  <div class="co-tips">
+  <p>The <a href="/tools/editors/vim/#plugins">Pandoc VIM plugin</a> is particular useful at showing these with <a href="/what/ligature/">ligatures</a>.</p>
+  </div>
+  <pre><code>
+  Roses are red↵
+  Violets are blue
+  </code></pre>
+  <h2 id="blocks">Blocks</h2>
+  <p>Blocks separate text or code from the document usually as a box. There are two main block types to remember: <em>plain</em> (preformatted, as-is) blocks and <em>code fences</em>. Both use three <a href="/key/">backticks</a> to “fence off” the text or code.</p>
+  <h3 id="plain">Plain</h3>
+  <p>When you just want the text to appear exactly as it is just use the triple-backtick fence posts.</p>
+  <pre class="markdown"><code>
+  ```
+
+      Roses are red
+      Violets are violet
+
+  ```
+  </code></pre>
+  <pre><code>
+      Roses are red
+      Violets are violet
+  </code></pre>
+  <h3 id="code-fences">Code Fences</h3>
+  <p>Code blocks are perhaps the single biggest reason to use markdown for all your tech writing and note taking. If you want syntax highlighting in your notes you get it for free. This provides very high-quality publications very easily</p>
+  <div class="co-pwz">
+  <p>Please be considerate of those who have trouble distinguishing between colors when making a syntax highlighting style selection. Many cannot see many of the colors making the text in those colors virtually invisible.</p>
+  </div>
+  <p>When you want to add syntax highlighting or otherwise indicate how the text should be handle provide an information tag immediately following the first triple-backtick fence, so for JavaScript it would be:</p>
+  <pre class="markdown"><code>
+  ```js
+
+  console.log(&#39;hello world&#39;)
+
+  ```
+  </code></pre>
+  <p>Note that color syntax highlighting here has disabled because it can distract from equal focus on everything being displayed and creates unreadable text for those challenged with distinguishing different colors — especially in educational settings.</p>
+  <pre class="js"><code>
+  console.log(&#39;hello world&#39;)
+  </code></pre>
+  <p>Although there are other ways to write blocks, using triple-backtick fences is the most consistent way to do them all. This allows quickly finding your blocks when editing as well as filtering them out easily with scripting or simple parsing. It is also the most widely supported. Discord, for example, only supports this format of code fence.</p>
+  <p>Here is a short list of supported language tags:</p>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: center;">Tag</th>
+  <th style="text-align: center;">Language</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;">md</td>
+  <td style="text-align: center;">Markdown</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;">json</td>
+  <td style="text-align: center;">JSON</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;">js</td>
+  <td style="text-align: center;">JavaScript</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;">html</td>
+  <td style="text-align: center;">HTML</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;">css</td>
+  <td style="text-align: center;">CSS</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;">sh</td>
+  <td style="text-align: center;">Shell or Bash</td>
+  </tr>
+  </tbody>
+  </table>
+  <h4 id="dont-forget-the-blank-lines">Don’t Forget the Blank Lines</h4>
+  <p>Even though all forms of Markdown support code fences that immediately contain content without a blank line after the opening fence post or before the final fence post you really should always add one and adjust your rendering styles appropriately. This is because <em>without</em> that initial blank browsers like FireFox that correctly respect whitespace as a DOM node will show your code incorrectly in a pre-formatted style. Plus the separation makes your knowledge source <em>much</em> easier to read and search.</p>
+  <pre class="markdown"><code>
+  Don&#39;t do this:
+
+  ```js
+  console.log(&#39;Hello&#39;)
+  ```
+
+  Do this instead:
+
+  ```js
+
+  console.log(&#39;Hello&#39;)
+
+  ```
+  </code></pre>
+  <h4 id="exception-for-markdown">Exception for Markdown</h4>
+  <p>In the single exceptional case where you need your block to contain markdown code you should use three or four tildes (<code>~~~markdown</code> or <code>~~~~markdown</code>). Again, this consistency allows you to filter out blocks from simple scripts that examine each line which can be useful for coding keyword searches and such.</p>
+  <pre><code>
+  ~~~markdown
+
+  Here is *some* markdown.
+
+  ```js
+
+  console.log(&#39;hello example&#39;)
+
+  ```
+
+  ~~~
+  </code></pre>
+  <pre class="markdown"><code>
+  Here is *some* markdown.
+
+  ```js
+
+  console.log(&#39;hello example&#39;)
+
+  ```
+  </code></pre>
+  <p>There are literally an infinite number of possible ways to indicate a block supported by the original and most derived Markdown parsers. Just stick with these two options. Consistency is far more important than artistic expression. Blocks are particularly important to keep consistent because you will frequently want to simply strip them out for keyword searches and such. Following these suggestions makes this trivial even from simple shell scripts.</p>
+  <div class="co-warn">
+  <p>Make sure there is no space after the backticks and before the block identifier (<code>js</code> in the example).</p>
+  </div>
+  <div class="co-fyi">
+  <p>Technically paragraphs, lists, and even separators are also considered blocks when parsed.</p>
+  </div>
+  <h2 id="blockquotes">Blockquotes</h2>
+  <p>Blockquotes are for quotations and <em>only</em> quotations. Avoid the temptation to use them for anything else because if you do you can semantically identify all the <em>actual</em> quotes in your content.</p>
+  <p>Begin each line of the block with a greater-than sign (right <a href="/key/">angle-bracket</a>).</p>
+  <p>Usually you will just have a single paragraph:</p>
+  <pre class="markdown"><code>
+  &gt; &quot;One of the painful things about our time is that those who feel certainty are stupid, and those with any imagination and understanding are filled with doubt and indecision.&quot; (Bertrand Russell)
+  </code></pre>
+  <blockquote>
+  <p>“One of the painful things about our time is that those who feel certainty are stupid, and those with any imagination and understanding are filled with doubt and indecision.” (Bertrand Russell)</p>
+  </blockquote>
+  <div class="co-tip">
+  <p>Use of quotation marks surrounding the text of the quote itself is completely up to you but is recommended so that multiple quotes can be combined next to one another without reader confusion.</p>
+  </div>
+  <p>In the rare case that your quotation expands beyond a single line make sure to join separate paragraphs with a blank line that is also included:</p>
+  <pre><code>
+  &gt; This is the first part of the quote.
+  &gt;
+  &gt; Here is the second part.
+  </code></pre>
+  <blockquote>
+  <p>This is the first part of the quote.</p>
+  <p>Here is the second part.</p>
+  </blockquote>
+  <h2 id="comments">Comments</h2>
+  <p>Comments are just simple HTML comments, which were inherited from SGML dating back decades.</p>
+  <pre class="markdown"><code>
+  &lt;!-- This is a comment --&gt;
+
+  This is a Markdown paragraph with another &lt;!-- another --&gt; comment in it.
+  </code></pre>
+  <!-- This is a comment -->
+  <p>This is a Markdown paragraph with another <!-- another --> comment in it.</p>
+  <p>Even though you should seriously avoid making your Markdown HTML dependent by including HTML as the original Markdown allowed, comments are a fair exception to this because <em>no</em> Markdown has any other syntax for indicating comments and <em>every</em> Markdown parser engines supports them.</p>
+  <div id="faq" class="co-faq">
+  <h2 id="why-not-use-tables">Why Not Use tables?</h2>
+  <p>Tables are not officially supported by the original Markdown nor are they supported in the CommonMark standard. Use an image of a table if you really need <em>basic</em> compatibility.</p>
+  <p>When the time comes to use tables you will want to use <a href="https://pandoc.org/MANUAL.html#tables">simple Pandoc Markdown tables</a> instead, which work even on systems that do not support them because of their use of dashes which get interpreted as lines in original Markdown parsers.</p>
+  <h2 id="what-about-github-tables">What About GitHub Tables?</h2>
+  <p>Just don’t use them. They are far too complicated and poorly designed. People have created tools just to be able to create GHF Markdown tables. They are a disaster but you might not realize how bad they are until you have experienced <a href="https://pandoc.org/MANUAL.html#tables">Pandoc Markdown tables</a> instead. GitHub tables were <em>never</em> supported by Markdown and are still <em>not</em> supported by CommonMark for obvious reasons. So if you ever want to move to another Git hosting site (like GitLab, and you should) you will quickly discover your tables do not render. If and when you are ready to be okay with your tables not rendering on Git hosting services graduate up to <a href="/lang/md/pandoc/">Pandoc Markdown</a> instead. It has much broader and deeper support than GFM and includes several table formats that are simpler <em>and</em> more powerful than GitHub’s.</p>
+  <h2 id="can-i-use-html-in-my-markdown">Can I Use HTML in My Markdown?</h2>
+  <p><em>You can but you never should.</em> There’s never any need and doing so creates unnecessary dependencies on a specific rendering format that stop your content from being used in other ways. There is always a way around it. Reach for <a href="/lang/md/pandoc/">Pandoc</a> when you think you need it. Consider using a template that looks for <code>tpl-style</code> in the YAML data and if set adds a CSS link element so that <code>styles.css</code> can be kept locally with your Markdown without polluting your Markdown instead.</p>
+  <h2 id="cant-i-use-reference-links-at-the-bottom">Can’t I Use Reference Links at the Bottom?</h2>
+  <p><em>Hell no!</em> Never use “reference links” that allow you to put the actual link elsewhere in the document usually at the bottom. While this made sense when Markdown was invented and the emphasis was on how pretty and readable the Markdown source text itself was this emphasis has changed today. Separating your link several hundred lines away from the text that is linked is <em>really</em> bad practice because it decouples the link making it much harder to copy and paste to another document — or worse — you will edit your document and completely forget to remove them leaving them orphaned.</p>
+  <h2 id="what-about-_-underscore">What About _ Underscore?</h2>
+  <p><em>Do not use underscore ever.</em> Yes the original Markdown supported it, but it was always a bad idea. Eventually it will bite you. It is not widely supported and causes problems when used for actual names.</p>
+  <p>Also, avoid combining or overlapping formatting as much as possible and avoid formatting a portion of a single word, which is not handled consistently — especially by syntax-highlighting tools and editors.</p>
+  <h2 id="can-i-just-use-http-for-links">Can I Just Use <code>http</code> for Links?</h2>
+  <p><em>No.</em> Never trust that your external links will be detected and autolinked automatically just because they start with <code>http</code>. There are still Markdown engines out there that do not autodetect them since autodetection was not a part of the original and has never been a part of any standard Markdown version even though this is one of the dumbest things GitHub added to their flavor of Markdown.</p>
+  <h2 id="should-i-use-multiline-paragraphs">Should I Use Multiline Paragraphs?</h2>
+  <p>There are strong arguments for either one.</p>
+  <h3 id="multiline">Multiline</h3>
+  <ul>
+  <li><p>Historically multiline has been much more popular and is the standard for many formal text document formats such as the IETF RFC specifications.</p></li>
+  <li><p>Multiline wrapping can be synchronized with rendered text width — 72 <code>textwidth</code> to 700px for example. While no rendering style should ever depend on such a thing, it is helpful to avoid odd outliers in a bulleted list, table, or paragraph orphans that, while strictly speaking are okay, would still be nice to avoid.</p></li>
+  <li><p>While it may seem counter-intuitive to hard wrap wasting the maximum width available on any terminal or TMUX pane, long lines are much more difficult reading while editing documents — particularly if the one writing them is working with them for long spans of time.</p></li>
+  <li><p>Seeing ugly hard wrapping when a terminal or TMUX pane is not wide enough provides an immediate visual queue that it needs to be widened in order to display the document correctly. This is <em>particularly</em> important if your Markdown has a lot of text in the YAML header.</p></li>
+  <li><p>The <code>vim-pandoc</code> plugin makes for drop-dead simple formatting. Just make sure to <code class="vim">let g:pandoc#formatting#mode = 'hA'</code> and <code class="vim">let   g:pandoc#formatting#textwidth = 72</code> so that formatting is not something you even have to think about.</p></li>
+  </ul>
+  <h3 id="single-line">Single Line</h3>
+  <ul>
+  <li><p>Paragraphs become one single long line allowing them to be easily copied and pasted with a single <code>dd</code> or <code>yy</code> in Vi/m.</p></li>
+  <li><p>None of the terminal or pane width is wasted.</p></li>
+  <li><p>Smaller panes — such as with TMUX — make hard wrapped paragraphs look <em>very</em> ugly. But this is also an indicator that your pane should be widened.</p></li>
+  </ul>
+  <h2 id="what-should-my-text-width-be">What Should My Text Width Be?</h2>
+  <p><em>72 has been the standard.</em> This provides eight characters for line numbering and other gutter symbols on an 80 character screen. Even though many — including Linus Torvaldz — now widely agree limiting code to 80 characters is no longer practical given the new standard longer terminal widths.</p>
+  </div>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+#!/usr/bin/python3
+
+'''
+if there is no argument print 'Hi there.' and exit
+remember the name user passed
+if name is rob or linux then change phrase to 'you rock' with name
+else if name is dork then change phrase to 'you rude' with name 
+print phrase
+'''
+
+'''
+if there is no argument print 'Hi there.' and exit
+remember the name user passed
+if name is rob or linux then print 'you rock' with name and exit
+if name is dork then print 'you rock' with name and exit
+print phrase
+'''
+
+import sys
+if len(sys.argv)<=1:
+    print("Hi there.")
+    exit()
+
+name = sys.argv[1]
+
+if name == 'Rob' or name == 'Linux':
+    print(f'Woah {name}, you Rock!')
+    exit()
+
+if name 'Dork':
+    print(f'Um, no need to be rude')
+    exit()
+
+print(f'Hi {name}')
+

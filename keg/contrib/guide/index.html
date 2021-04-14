@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Style Guide</title>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <link rel="shortcut icon" href="/assets/img/logo.png" type="image/png">
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
+  <!-- link rel="shortcut icon" href="/assets/img/logo.png" type="image/png"-->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<header class=nav-bar>
+  <nav>
+    <div class=sidebar-button></div>
+    <!--div id=bwtoggle></div-->
+    <a class="homelink spy" href="/">r<span class=hideable>wx.gg</span></a>
+    <div class="nav-right">
+      <!-- div id=search-box></div -->
+      <ul class=nav-links>
+        <li class=nav-item><a class=nav-link href="/boost/">Boosts</a></li>
+        <!--
+        <li class=nav-item><a class=nav-link href="/how/">HowTos</a></li>
+        <li class=nav-item><a class=nav-link href="/contrib/">Contribute</a></li>
+        -->
+        <li class=nav-item><a class="nav-link" href="https://gitlab.com/rwx.gg/README">GitLab</a></li>
+        <li class=nav-item><a class="nav-link" href="https://www.youtube.com/rwxrob">YouTube</a></li>
+        <li class=nav-item><a class="nav-link" href="https://discord.gg/9wydZXY">Discord</a></li>
+        <li class=nav-item><a class="nav-link" href="https://twitch.tv/rwxrob">Twitch</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main id=top>
+<div class=container>  <h1 id=title>Style Guide</h1>
+  <h2 id=subtitle>Follow These When Contributing</h2>
+  <p>Here’s a summary of styles used on <code>rwx.gg</code> so that contributors can keep things <em>extremely</em> consistent. The value proposition of this knowledge app (above, say, a wiki) is this consistency, readability, and the ability to aggregate nodes into other context-specific nodes. Feel free to <a href="https://gitlab.com/rwx.gg/README/-/issues">open an issue</a> if you feel that anything violates this consistency. Thanks.</p>
+  <h2 id="writing-style-grammar-and-usage">Writing Style, Grammar, and Usage</h2>
+  <p>Except where otherwise noted below, the <span class="spy">RWX.GG</span> project follows <a href="/reviews/books/gregg">The Gregg Reference Manual</a> for all written content.</p>
+  <h2 id="general-rules">General Rules</h2>
+  <ul>
+  <li><p>Keep main template at <code>/assets/templates/main.html</code></p></li>
+  <li><p>Keep top template at <code>/assets/templates/top.html</code></p></li>
+  <li><p>Keep bottom template at <code>/assets/templates/bottom.html</code></p></li>
+  <li><p>Have the main template begin with <code>${top()}</code></p></li>
+  <li><p>Have the main template end with <code>${bottom()}</code></p></li>
+  <li><p>Keep main style sheet at <code>/assets/styles.css</code></p></li>
+  <li><p>Add node local template override to <code>&lt;node&gt;/template.html</code></p></li>
+  <li><p>Keep node local style overrides as <code>&lt;node&gt;/styles.css</code></p></li>
+  <li><p>Never include HTML or CSS of any kind within any <code>README.md</code> file.</p></li>
+  <li><p>Use any Pandoc Markdown whatsoever but limit to <a href="/lang/md/basic/">Basic</a> or <a href="/lang/md/pandoc/light/">Light</a> when possible.</p></li>
+  <li><p>Never use <code>H1</code> (<code>#</code>) headings. Use <code>Title</code> in YAML instead.</p></li>
+  <li><p>Do not use <a href="/what/task/">gerunds</a> to describe tasks and actions.</p></li>
+  <li><p>Use questions for all <code>/what/</code> terms.</p></li>
+  <li><p>Use imperative verbs in IDs and instructional steps.</p></li>
+  <li><p>Avoid parentheses at all costs. Use dash, comma or separate sentence.</p></li>
+  <li><p>Only <code>README.md</code> files are rendered. Other markdown ignored.</p></li>
+  <li><p>Keep nodes composable, don’t include too much into one.</p></li>
+  <li><p>Subnodes of <a href="/what/knowledge/node/">knowledge nodes</a> are fine.</p></li>
+  <li><p>Assume any node could be moved anywhere at any time.</p></li>
+  <li><p>Only link to nodes, local files, and external URLs.</p></li>
+  <li><p>Never link to a local HTML file.</p></li>
+  <li><p>Use rooted directory refs (<code>/views/</code>)</p></li>
+  <li><p>Always including the trailing slash (<code>/foo/</code> not <code>/foo</code>).</p></li>
+  <li><p>Put local hashtag refs after slash (<code>/foo/#bar</code>).</p></li>
+  <li><p>Use local (<code>./</code>) directory refs for local content and subnodes.</p></li>
+  <li><p>Don’t use parent (<code>../</code>) directory refs.</p></li>
+  <li><p>Use only full path or external links.</p></li>
+  <li><p>Keep node directory names easy to type and remember:</p>
+  <ul>
+  <li>Pick meaningful names</li>
+  <li>12 lowercase characters max</li>
+  <li>Use abbreviations and acronyms when possible</li>
+  <li>First character must be letter</li>
+  <li>Letters and numbers only
+  <ul>
+  <li>No hyphens, dashes, or underscores</li>
+  <li>No emojis</li>
+  </ul></li>
+  </ul></li>
+  <li><p>Use a default empty link populate line in your <code>.vimrc</code> to fill in empty links that pull up searches on Duck.com rather than not link at all. Later you can return and provide local content as time allows. This saves those learning on the site from having to type in all the links to search the Web for terms that are likely to need explanation and allows mobile users to simple tap as they go.</p></li>
+  <li><p>Never depend on color for anything. Keep stuff black-ish and white.</p></li>
+  <li><p>Do not put links of any kind in any heading.</p></li>
+  <li><p>Use <code>Query: true</code> to activate link from <code>h1</code> heading to DuckDuckGo search.</p></li>
+  </ul>
+  <pre class="vimscript"><code>autocmd vimleavepre *.md !perl -p -i -e &#39;s,\[([^\]]+?)\]\(\),[\1](https://duck.com/lite?kae=t&amp;q=\1),g&#39; %</code></pre>
+  <h2 id="callout-types">Callout Types</h2>
+  <p>Here are the different callout types that can be used by adding a <code>co-</code> to the beginning. Make sure you know what a Pandoc Markdown “Div” is. (There are a lot of examples already in the content.)</p>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: center;">Identifier</th>
+  <th style="text-align: left;">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;"><code>faq</code></td>
+  <td style="text-align: left;">Surround level two headers of FAQs</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>fyi</code></td>
+  <td style="text-align: left;">Informational but not related</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>btw</code></td>
+  <td style="text-align: left;">Informational and slightly related</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>fun</code></td>
+  <td style="text-align: left;">Informational, related, and fun</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>yea</code></td>
+  <td style="text-align: left;">Something to celebrate.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>hap</code></td>
+  <td style="text-align: left;">Something happy</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>sad</code></td>
+  <td style="text-align: left;">Something sad.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>mad</code></td>
+  <td style="text-align: left;">Something mad.</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>doh</code></td>
+  <td style="text-align: left;">Common problems and mistakes, trouble.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>dum</code></td>
+  <td style="text-align: left;">So dumb you’d smack your forehead</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>tip</code></td>
+  <td style="text-align: left;">High value information, related ProTips</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>pwz</code></td>
+  <td style="text-align: left;">Pause and pay attention, achtung</td>
+  </tr>
+  </tbody>
+  </table>
+  <h2 id="special-faq-divs">Special <code>faq</code> Divs</h2>
+  <p>In order for frequently asked question text to be included in the main meta data summations that are used for localized searches all FAQ questions must begin with a level-two heading (<code>##</code>) and should also be grouped and encapsulated in a div group as follows:</p>
+  <pre class="markdown"><code>:::co-faq
+
+  ## How should I include FAQs throughout the content?
+
+  This is how
+
+  ## Do I need them to always be second level headings?
+
+  Yes. Nothing forces it, but it is a good convention.
+
+  ## Should I captialize the FAQ heading?
+
+  No. It should read and appear like any other sentence.
+
+  :::
+
+  </code></pre>
+  <h2 id="special-link-types">Special Link Types</h2>
+  <p>The following link types can be added to a link as <code>{.&lt;type&gt;}</code> immediately after the link markdown causing the link to have extra formatting and <code>before</code> content including an emoji or special character.</p>
+  <table>
+  <thead>
+  <tr class="header">
+  <th style="text-align: center;">Identifier</th>
+  <th style="text-align: left;">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;"><code>see</code></td>
+  <td style="text-align: left;">Notable internal or external link</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>watch</code></td>
+  <td style="text-align: left;">Direct link to a video to play</td>
+  </tr>
+  <tr class="odd">
+  <td style="text-align: center;"><code>download</code></td>
+  <td style="text-align: left;">A link to a resource that will download</td>
+  </tr>
+  </tbody>
+  </table>
+  <h2 id="yaml-headers">YAML Headers</h2>
+  <p>YAML headers contain both meta data information as well as display parameters. The headers from the main <code>/README.md</code> file can be considered global and are available to every node in the knowledge base. Header identifiers can literally be any valid YAML but the following are standard and expected when creating the <code>meta.json</code> file.</p>
+  <table style="width:79%;">
+  <colgroup>
+  <col style="width: 22%" />
+  <col style="width: 56%" />
+  </colgroup>
+  <thead>
+  <tr class="header">
+  <th style="text-align: center;">Identifier</th>
+  <th style="text-align: left;">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td style="text-align: center;"><code>Title</code></td>
+  <td style="text-align: left;">Becomes the title of the entire knowledge base. If not set will be set to <code>Short</code> if available. Overriden by nodes but always applies to whole base.</td>
+  </tr>
+  <tr class="even">
+  <td style="text-align: center;"><code>Short</code></td>
+  <td style="text-align: left;">Short version of the title included in every page and usually combined with the node’s own title.</td>
+  </tr>
+  </tbody>
+  </table>
+  <p>Table Standard YAML Headers</p>
+  <h3 id="use-of-case">Use of Case</h3>
+  <p>Use initial caps for headers that are exportable and have relevance. Only initial caps will be added to the <code>meta.json</code> file.</p>
+  <p>Lowercase should be used for localized data usually considered arguments and configuration of the template itself. Use the <code>tpl-</code> prefix and whitespace to group these type of headers.</p>
+  <h3 id="knowledge-nodes">Knowledge Nodes</h3>
+  <section id="why-no-side-pane-content-lists" class="co-faq">
+  <h2>Why No Side Pane Content Lists?</h2>
+  <p>We want to encourage searching, not scanning. Such table of contents listings, which are popular on sites like <a href="https://readthedocs.org" class="uri">https://readthedocs.org</a> and VuePress are distracting, wasteful, and unnecessary. They distract the reader from the content and require active removal to deal with — when such options are allowed. They also do not deal well with frequent updates. When such indexes are required they should be <em>the entire node</em> and not something off to the side. Never forget these are not books we are writing so put all the common idioms from books out of your mind. Things like chapters and pagination and even the words “page”, and “document” do not apply.</p>
+  <p>Instead we should be promoting very memorable URLs with optional shortcuts so people can memorize them quickly and go <em>right</em> to what they want later after finding it for the first time. Often those who design complex knowledge formats with massive tables of contents have long and obnoxious URLs ignoring the very <em>purpose</em> of a URL. PHP solutions are even worse with URLs that sometimes span multiple lines. ReadTheDocs, for example, rather stupidly shows the <code>index.html</code> in the name making memorization of a simple knowledge node path impossible.</p>
+  </section>
+</main>
+<footer>
+  <p><a href="/copyright/" id=copyright>© 2020 Rob Muhlestein. Licensed under Creative Commons Attribution-ShareAlike.</a><br/>Does something seem to have changed? <a href="/changes/">Check the change log</a>.
+  <br>See something wrong? <a class="nodecor" href="https://gitlab.com/rwx.gg/README/-/issues">Open a ticket</a>.
+  </p>
+</footer>
+<script src="/assets/main.js"></script>
+</body>
+</html>

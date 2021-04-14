@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ -n "$COMP_LINE" ]]; then
+  days="
+monday
+tuesday
+wednesday
+thursday
+friday
+saturday
+sunday
+"
+  shift
+  echo "$days" | grep "^$1"
+  exit 0
+fi
+
+declare day="$1"
+[[ -z "$day" ]] && usageln 'week <day>' && exit 1
+echo "You wanted ${day}."
+
+
