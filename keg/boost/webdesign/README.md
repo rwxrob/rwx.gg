@@ -1,3 +1,0 @@
----
-Title: Learning Web Design
----

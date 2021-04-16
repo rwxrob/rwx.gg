@@ -1,3 +1,0 @@
-# Games are Good
-
-Games are good! Video games are also now acceptable to the mainstream. *Thank GOD* the stigma is finally changing. Surgeons play video games regularly to promote their fine motor skills. Games automatically teach you something. Pick the right game and you learn what the game can help you learn. This is why the selection of the games you play is important because—like it of not—you *will* learn something playing *any* game that exists.

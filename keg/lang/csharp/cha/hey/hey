@@ -1,3 +1,0 @@
-#!/usr/bin/csharp
-
-Console.WriteLine (args[0]);
