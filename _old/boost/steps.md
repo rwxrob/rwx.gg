@@ -19,9 +19,9 @@
 1. Summary and History of Cloud Native Technologies
 1. Summary and History of Legal Licensing
 
-## Backend Boost
+## Server-Side Boost
 
-1. Understanding Backend Computing and Services
+1. Understanding Server-Side Computing and Services
 1. Installing Docker
 1. Running Linux Containers
 1. Understanding How Computers Work

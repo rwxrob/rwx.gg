@@ -19,7 +19,7 @@ stream to keep you company.
  1 | Install Software, Use Docker for Development
  2 | Use and Configure Bash CLI, Find Stuff Fast
  3 | Edit Files with Vim, Use Screen and TMUX
- 4 | Write Markdown and Render with Pandoc
+ 4 | Write Markdown and Render with Pandoc and KEG
  5 | Code Simple Web Sites, Grok Network Essentials
  6 | Structure Data in JSON, YAML, TOML, XML, CSV
  7 | Manage Source with git, GitHub, and gh
